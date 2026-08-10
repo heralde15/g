@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ethernia - tModLoader Community</title>
+    <style>
+        :root {
+            --bg-primary: #0a1128;
+            --bg-secondary: #1c2541;
+            --accent-blue: #0077b6;
+            --bright-blue: #00b4d8;
+            --light-blue: #90e0ef;
+            --text-color: #ffffff;
+            --card-bg: #131b2e;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-color);
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--bg-secondary);
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            border-bottom: 2px solid var(--accent-blue);
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--bright-blue);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            margin-left: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--bright-blue);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 4rem 1rem 2rem 1rem;
+            background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: var(--light-blue);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 2rem auto;
+            color: #d1d5db;
+        }
+
+        /* Server IP Box */
+        .server-box {
+            background-color: var(--card-bg);
+            border: 2px solid var(--bright-blue);
+            padding: 1.5rem;
+            border-radius: 10px;
+            display: inline-block;
+            margin-bottom: 2rem;
+            box-shadow: 0 0 15px rgba(0, 180, 216, 0.2);
+        }
+
+        .server-box p {
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: var(--light-blue);
+        }
+
+        .ip-address {
+            font-family: monospace;
+            font-size: 1.3rem;
+            background: var(--bg-primary);
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            border: 1px solid var(--accent-blue);
+            user-select: all;
+        }
+
+        /* Action Buttons */
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.8rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.2s, background-color 0.3s;
+        }
+
+        .btn-discord {
+            background-color: #5865F2;
+            color: white;
+        }
+
+        .btn-discord:hover {
+            background-color: #4752C4;
+            transform: translateY(-2px);
+        }
+
+        .btn-primary {
+            background-color: var(--accent-blue);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--bright-blue);
+            transform: translateY(-2px);
+        }
+
+        /* Discord Widget Container */
+        .discord-section {
+            margin: 2rem auto 4rem auto;
+            display: flex;
+            justify-content: center;
+        }
+
+        iframe {
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+            border: 1px solid var(--accent-blue);
+        }
+
+        /* Features Section */
+        .features {
+            max-width: 1100px;
+            margin: 2rem auto 4rem auto;
+            padding: 0 1rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background-color: var(--card-bg);
+            padding: 2rem;
+            border-radius: 8px;
+            border-top: 4px solid var(--bright-blue);
+            text-align: center;
+        }
+
+        .feature-card h3 {
+            color: var(--light-blue);
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: var(--bg-secondary);
+            border-top: 1px solid var(--accent-blue);
+            margin-top: 4rem;
+            font-size: 0.9rem;
+            color: #9ca3af;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 2.2rem; }
+            header { flex-direction: column; gap: 1rem; }
+            nav a { margin: 0 0.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Ethernia</div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#server">Server</a>
+            <a href="#discord">Discord</a>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <h1>Welcome to Ethernia</h1>
+        <p>Join our tModLoader server, explore new modded adventures, and build together in an amazing Terraria universe.</p>
+        
+        <div class="server-box" id="server">
+            <p>SERVER ADDRESS / IP</p>
+            <div class="ip-address">147.185.221.230:60126</div>
+        </div>
+
+        <div class="btn-container">
+            <a href="https://discord.com/invite/Msg5Ttkk" target="_blank" class="btn btn-discord">
+                Join Our Discord
+            </a>
+            <a href="#server" class="btn btn-primary">
+                Get Started
+            </a>
+        </div>
+    </section>
+
+    <section class="discord-section" id="discord">
+        <iframe src="https://discord.com/widget?id=1532140573765406883&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+    </section>
+
+    <section class="features">
+        <div class="feature-card">
+            <h3>Active Community</h3>
+            <p>Connect with players, share your builds, and team up for boss fights inside Ethernia.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Custom Mods</h3>
+            <p>Experience tailored tModLoader mods designed to enhance gameplay and performance.</p>
+        </div>
+        <div class="feature-card">
+            <h3>24/7 Uptime</h3>
+            <p>Our server runs smoothly so you can jump in and play whenever you want.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Ethernia Community. Not affiliated with Re-Logic.</p>
+    </footer>
+
+</body>
+</html>
